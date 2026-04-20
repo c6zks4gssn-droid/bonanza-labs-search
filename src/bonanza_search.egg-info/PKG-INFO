@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: bonanza-search
+Version: 0.1.0
+Summary: 🔍 Bonanza Labs ✦ Search — AI web search & extract API
+Author-email: Bonanza Labs <passiveassets@proton.me>
+License-Expression: Apache-2.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic>=2.0
+Requires-Dist: httpx>=0.25
+Requires-Dist: click>=8.0
+Requires-Dist: rich>=13.0
+Requires-Dist: beautifulsoup4>=4.12
+Provides-Extra: api
+Requires-Dist: fastapi>=0.104; extra == "api"
+Requires-Dist: uvicorn>=0.24; extra == "api"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"

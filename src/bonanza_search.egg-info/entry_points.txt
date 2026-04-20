@@ -1,0 +1,2 @@
+[console_scripts]
+bonanza-search = bonanza_search.cli:main

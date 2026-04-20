@@ -58,9 +58,14 @@ class WebSearchEngine:
                     title_el = r.select_one(".result__a")
                     snippet_el = r.select_one(".result__snippet")
                     if title_el:
+                        url = title_el.get("href", "")
+                        # Clean DuckDuckGo redirect URLs
+                        if "uddg=" in url:
+                            from urllib.parse import unquote
+                            url = unquote(url.split("uddg=")[1].split("&")[0])
                         results.append(SearchResult(
                             title=title_el.get_text(strip=True),
-                            url=title_el.get("href", ""),
+                            url=url,
                             snippet=snippet_el.get_text(strip=True) if snippet_el else "",
                             source="duckduckgo",
                         ))
